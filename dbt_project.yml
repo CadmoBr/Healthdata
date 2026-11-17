@@ -1,0 +1,25 @@
+name: 'healthdata_dw'
+version: '1.0.0'
+config-version: 2
+
+profile: 'healthdata_dw'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  healthdata_dw:
+    # Camada Staging / Silver Refinada
+    staging:
+      +materialized: view
+    # Camada Gold: dimensões como tabelas; fatos definem incrementalmente cada modelo
+    marts:
+      +materialized: table

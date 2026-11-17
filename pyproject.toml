@@ -1,0 +1,17 @@
+[tool.ruff]
+line-length = 105
+target-version = "py312"
+exclude = [
+    ".venv",
+    "venv",
+    "dbt/healthdata_dw/target",
+    "dbt/healthdata_dw/dbt_packages",
+]
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,148 @@
+{
+  "discovery_timestamp_utc": "2026-11-12T11:11:53.306665+00:00",
+  "sus_rest_api_base": "https://apidadosabertos.saude.gov.br",
+  "ckan_api_base": "https://dadosabertos.saude.gov.br/api/3/action",
+  "rest_endpoints_analysis": [
+    {
+      "endpoint_name": "CNES - Estabelecimentos de Saúde",
+      "url": "https://apidadosabertos.saude.gov.br/cnes/estabelecimentos",
+      "params_tested": {
+        "limit": 5,
+        "offset": 1
+      },
+      "status": "AVAILABLE",
+      "http_status": 200,
+      "latency_ms": 428.12,
+      "structure": {
+        "payload_type": "dict_with_list",
+        "root_keys": [
+          "estabelecimentos"
+        ],
+        "data_key": "estabelecimentos",
+        "sample_record_count": 5,
+        "fields": [
+          "codigo_cnes",
+          "numero_cnpj_entidade",
+          "nome_razao_social",
+          "nome_fantasia",
+          "natureza_organizacao_entidade",
+          "tipo_gestao",
+          "descricao_nivel_hierarquia",
+          "descricao_esfera_administrativa",
+          "codigo_tipo_unidade",
+          "codigo_cep_estabelecimento",
+          "endereco_estabelecimento",
+          "numero_estabelecimento",
+          "bairro_estabelecimento",
+          "numero_telefone_estabelecimento",
+          "latitude_estabelecimento_decimo_grau",
+          "longitude_estabelecimento_decimo_grau",
+          "endereco_email_estabelecimento",
+          "numero_cnpj",
+          "codigo_identificador_turno_atendimento",
+          "descricao_turno_atendimento",
+          "estabelecimento_faz_atendimento_ambulatorial_sus",
+          "codigo_estabelecimento_saude",
+          "codigo_uf",
+          "codigo_municipio",
+          "descricao_natureza_juridica_estabelecimento",
+          "codigo_motivo_desabilitacao_estabelecimento",
+          "estabelecimento_possui_centro_cirurgico",
+          "estabelecimento_possui_centro_obstetrico",
+          "estabelecimento_possui_centro_neonatal",
+          "estabelecimento_possui_atendimento_hospitalar",
+          "estabelecimento_possui_servico_apoio",
+          "estabelecimento_possui_atendimento_ambulatorial",
+          "codigo_atividade_ensino_unidade",
+          "codigo_natureza_organizacao_unidade",
+          "codigo_nivel_hierarquia_unidade",
+          "codigo_esfera_administrativa_unidade",
+          "data_atualizacao"
+        ],
+        "sample_first_record": {
+          "codigo_cnes": 78,
+          "numero_cnpj_entidade": "11294402000162",
+          "nome_razao_social": "PREFEITURA MUNICIPAL DO CABO DE SANTO AGOSTINHO",
+          "nome_fantasia": "CENTRO HERBERT DE SOUZA",
+          "natureza_organizacao_entidade": null,
+          "tipo_gestao": "M",
+          "descricao_nivel_hierarquia": null,
+          "descricao_esfera_administrativa": "MUNICIPAL",
+          "codigo_tipo_unidade": 36,
+          "codigo_cep_estabelecimento": "54510360",
+          "endereco_estabelecimento": "AV HISTORIADOR PEREIRA DA COSTA",
+          "numero_estabelecimento": "428",
+          "bairro_estabelecimento": "CENTRO",
+          "numero_telefone_estabelecimento": "(81)35210974",
+          "latitude_estabelecimento_decimo_grau": -8.287483589453995,
+          "longitude_estabelecimento_decimo_grau": -35.037505222041695,
+          "endereco_email_estabelecimento": null,
+          "numero_cnpj": null,
+          "codigo_identificador_turno_atendimento": "03",
+          "descricao_turno_atendimento": "ATENDIMENTOS NOS TURNOS DA MANHA E A TARDE",
+          "estabelecimento_faz_atendimento_ambulatorial_sus": "SIM",
+          "codigo_estabelecimento_saude": "2602900000078",
+          "codigo_uf": 26,
+          "codigo_municipio": 260290,
+          "descricao_natureza_juridica_estabelecimento": "1244",
+          "codigo_motivo_desabilitacao_estabelecimento": null,
+          "estabelecimento_possui_centro_cirurgico": 0,
+          "estabelecimento_possui_centro_obstetrico": 0,
+          "estabelecimento_possui_centro_neonatal": 0,
+          "estabelecimento_possui_atendimento_hospitalar": 0,
+          "estabelecimento_possui_servico_apoio": 0,
+          "estabelecimento_possui_atendimento_ambulatorial": 0,
+          "codigo_atividade_ensino_unidade": "04",
+          "codigo_natureza_organizacao_unidade": null,
+          "codigo_nivel_hierarquia_unidade": null,
+          "codigo_esfera_administrativa_unidade": "M ",
+          "data_atualizacao": "2025-09-30"
+        }
+      }
+    },
+    {
+      "endpoint_name": "CNES - Tipologias de Leitos / Leitos Hospitalares",
+      "url": "https://apidadosabertos.saude.gov.br/cnes/tipologias-leitos",
+      "params_tested": {
+        "limit": 5,
+        "offset": 1
+      },
+      "status": "UNAVAILABLE_OR_ERROR",
+      "latency_ms": 4220.67,
+      "error": "Client error '404 NOT FOUND' for url 'https://apidadosabertos.saude.gov.br/cnes/tipologias-leitos?limit=5&offset=1'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+    },
+    {
+      "endpoint_name": "CNES - Leitos",
+      "url": "https://apidadosabertos.saude.gov.br/cnes/leitos",
+      "params_tested": {
+        "limit": 5,
+        "offset": 1
+      },
+      "status": "UNAVAILABLE_OR_ERROR",
+      "latency_ms": 4220.93,
+      "error": "Client error '404 NOT FOUND' for url 'https://apidadosabertos.saude.gov.br/cnes/leitos?limit=5&offset=1'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+    }
+  ],
+  "ckan_catalog_analysis": [
+    {
+      "search_term": "cnes",
+      "status": "UNAVAILABLE_OR_ERROR",
+      "error": "Client error '404 Not Found' for url 'https://dadosabertos.saude.gov.br/api/3/action/package_search?q=cnes&rows=3'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+    },
+    {
+      "search_term": "sih",
+      "status": "UNAVAILABLE_OR_ERROR",
+      "error": "Client error '404 Not Found' for url 'https://dadosabertos.saude.gov.br/api/3/action/package_search?q=sih&rows=3'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+    },
+    {
+      "search_term": "leitos",
+      "status": "UNAVAILABLE_OR_ERROR",
+      "error": "Client error '404 Not Found' for url 'https://dadosabertos.saude.gov.br/api/3/action/package_search?q=leitos&rows=3'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+    },
+    {
+      "search_term": "producao hospitalar",
+      "status": "UNAVAILABLE_OR_ERROR",
+      "error": "Client error '404 Not Found' for url 'https://dadosabertos.saude.gov.br/api/3/action/package_search?q=producao%20hospitalar&rows=3'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"
+    }
+  ]
+}

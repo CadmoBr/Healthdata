@@ -1,0 +1,101 @@
+﻿version: 2
+
+models:
+  - name: dim_date
+    description: "Dimensão calendário mensal de competências do SUS (YYYYMM)"
+    columns:
+      - name: sk_date
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_municipality
+    description: "Dimensão geográfica de municípios brasileiros e regiões de saúde"
+    columns:
+      - name: sk_municipality
+        tests:
+          - unique
+          - not_null
+      - name: no_municipio
+        tests:
+          - not_null
+
+  - name: dim_health_facility
+    description: "Dimensão de estabelecimentos de saúde e unidades hospitalares (CNES)"
+    columns:
+      - name: sk_facility
+        tests:
+          - unique
+          - not_null
+      - name: fk_municipality
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_municipality')
+              field: sk_municipality
+
+  - name: dim_procedure
+    description: "Dimensão de procedimentos médico-hospitalares do SIH/SUS"
+    columns:
+      - name: sk_procedure
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_hospital_beds
+    description: "Tabela Fato de capacidade hospitalar e distribuição de leitos SUS/UTI"
+    columns:
+      - name: sk_fact_beds
+        tests:
+          - unique
+          - not_null
+      - name: fk_date
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: sk_date
+      - name: fk_municipality
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_municipality')
+              field: sk_municipality
+      - name: fk_facility
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_health_facility')
+              field: sk_facility
+
+  - name: fact_hospital_production
+    description: "Tabela Fato de produção hospitalar aprovada (SIH/SUS)"
+    columns:
+      - name: sk_fact_production
+        tests:
+          - unique
+          - not_null
+      - name: fk_date
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: sk_date
+      - name: fk_municipality
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_municipality')
+              field: sk_municipality
+      - name: fk_facility
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_health_facility')
+              field: sk_facility
+      - name: fk_procedure
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_procedure')
+              field: sk_procedure

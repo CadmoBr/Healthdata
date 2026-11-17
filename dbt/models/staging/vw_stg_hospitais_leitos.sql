@@ -1,0 +1,26 @@
+{{
+    config(
+        materialized='view'
+    )
+}}
+
+SELECT
+    md5(CAST(codigo_municipio AS TEXT) || '_' || CAST(nome_hospital AS TEXT) || '_' || COALESCE(CAST(cep_hospital AS TEXT), '')) AS sk_hospital_natural,
+    CAST(codigo_municipio AS VARCHAR(6)) AS co_ibge,
+    CAST(sigla_uf AS VARCHAR(2)) AS sg_uf,
+    CAST(regiao_brasil AS VARCHAR(40)) AS no_regiao,
+    CAST(nome_municipio AS VARCHAR(150)) AS no_municipio,
+    CAST(nome_hospital AS VARCHAR(255)) AS no_hospital,
+    CAST(razao_social_hospital AS VARCHAR(255)) AS no_razao_social,
+    CAST(tipo_gestao AS VARCHAR(30)) AS tp_gestao,
+    CAST(descricao_tipo_unidade AS VARCHAR(120)) AS ds_tipo_unidade,
+    CAST(descricao_natureza_juridica AS VARCHAR(120)) AS ds_natureza_juridica,
+    CAST(qt_leitos_total AS INTEGER) AS qt_leitos_total,
+    CAST(qt_leitos_sus AS INTEGER) AS qt_leitos_sus,
+    CAST(qt_leitos_uti_total AS INTEGER) AS qt_leitos_uti_total,
+    CAST(qt_leitos_uti_sus AS INTEGER) AS qt_leitos_uti_sus,
+    CAST(qt_leitos_uti_adulto AS INTEGER) AS qt_leitos_uti_adulto,
+    CAST(qt_leitos_uti_sus_adulto AS INTEGER) AS qt_leitos_uti_sus_adulto,
+    CAST(qt_leitos_uti_pediatrico AS INTEGER) AS qt_leitos_uti_pediatrico,
+    CAST(qt_leitos_uti_neonatal AS INTEGER) AS qt_leitos_uti_neonatal
+FROM {{ source('raw_silver', 'stg_hospitais_e_leitos') }}

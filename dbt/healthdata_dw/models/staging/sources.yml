@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: raw_silver
+    description: "Camada Silver carregada pelo pipeline Python no PostgreSQL"
+    schema: raw_silver
+    tables:
+      - name: stg_municipios_saude
+      - name: stg_cnes_estabelecimentos
+      - name: stg_hospitais_e_leitos
+      - name: stg_cnes_leitos_historico
+      - name: stg_sih_producao_hospitalar

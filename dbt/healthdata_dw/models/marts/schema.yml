@@ -1,0 +1,95 @@
+version: 2
+
+models:
+  - name: dim_date
+    columns:
+      - name: sk_date
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_municipality
+    columns:
+      - name: sk_municipality
+        tests:
+          - unique
+          - not_null
+      - name: no_municipio
+        tests:
+          - not_null
+
+  - name: dim_health_facility
+    columns:
+      - name: sk_facility
+        tests:
+          - unique
+          - not_null
+      - name: fk_municipality
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_municipality')
+              field: sk_municipality
+
+  - name: dim_procedure
+    columns:
+      - name: sk_procedure
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_hospital_beds
+    columns:
+      - name: sk_fact_beds
+        tests:
+          - unique
+          - not_null
+      - name: fk_date
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: sk_date
+      - name: fk_municipality
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_municipality')
+              field: sk_municipality
+      - name: fk_facility
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_health_facility')
+              field: sk_facility
+
+  - name: fact_hospital_production
+    columns:
+      - name: sk_fact_production
+        tests:
+          - unique
+          - not_null
+      - name: fk_date
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: sk_date
+      - name: fk_municipality
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_municipality')
+              field: sk_municipality
+      - name: fk_facility
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_health_facility')
+              field: sk_facility
+      - name: fk_procedure
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_procedure')
+              field: sk_procedure

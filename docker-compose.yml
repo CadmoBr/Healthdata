@@ -1,0 +1,54 @@
+services:
+  postgres_dw:
+    image: postgres:16-alpine
+    container_name: healthdata_postgres_dw
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-healthdata_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-healthdata_pass_local}
+      POSTGRES_DB: ${POSTGRES_DB:-healthdata_dw}
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_dw_data:/var/lib/postgresql/data
+      - ./sql/schemas/01_init_dw.sql:/docker-entrypoint-initdb.d/01_init_dw.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-healthdata_user} -d $${POSTGRES_DB:-healthdata_dw}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  airflow:
+    image: apache/airflow:2.10.2-python3.12
+    container_name: healthdata_airflow
+    restart: unless-stopped
+    depends_on:
+      postgres_dw:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-healthdata_user}:${POSTGRES_PASSWORD:-healthdata_pass_local}@postgres_dw:5432/${POSTGRES_DB:-healthdata_dw}
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      PYTHONPATH: /opt/airflow
+      POSTGRES_HOST: postgres_dw
+      POSTGRES_PORT: "5432"
+      POSTGRES_USER: ${POSTGRES_USER:-healthdata_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-healthdata_pass_local}
+      POSTGRES_DB: ${POSTGRES_DB:-healthdata_dw}
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./src:/opt/airflow/src
+      - ./dbt:/opt/airflow/dbt
+      - ./data:/opt/airflow/data
+      - ./docs:/opt/airflow/docs
+      - ./logs:/opt/airflow/logs
+    command: standalone
+    profiles:
+      - orchestration
+
+volumes:
+  pg_dw_data:

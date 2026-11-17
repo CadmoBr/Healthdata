@@ -1,0 +1,51 @@
+{
+    "path_count": 139,
+    "parsed_path_count": 139,
+    "static_analysis_path_count": 11,
+    "static_analysis_parsed_path_count": 11,
+    "is_partial_parse_enabled": false,
+    "is_static_analysis_enabled": true,
+    "read_files_elapsed": 0.05866539999988163,
+    "load_macros_elapsed": 0.4404245000005176,
+    "parse_project_elapsed": 0.3989234000000579,
+    "patch_sources_elapsed": 0.003618599999754224,
+    "process_manifest_elapsed": 0.014366400000653812,
+    "load_all_elapsed": 1.0064911999998003,
+    "projects": [
+        {
+            "project_name": "healthdata_dw",
+            "elapsed": 0.3933391999999003,
+            "parsers": [
+                {
+                    "parser": "model",
+                    "elapsed": 0.14956619999975374,
+                    "parsed_path_count": 11
+                },
+                {
+                    "parser": "test",
+                    "elapsed": 0.24090679999972053,
+                    "parsed_path_count": 2
+                }
+            ],
+            "parsed_path_count": 13
+        },
+        {
+            "project_name": "dbt_postgres",
+            "elapsed": 0.002877599998100777,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt",
+            "elapsed": 0.002577499999460997,
+            "parsers": [
+                {
+                    "parser": "doc",
+                    "elapsed": 0.00019780000002356246,
+                    "parsed_path_count": 1
+                }
+            ],
+            "parsed_path_count": 1
+        }
+    ]
+}

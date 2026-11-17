@@ -1,0 +1,24 @@
+# Ambientes virtuais e caches Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Variáveis de ambiente e segredos
+.env
+*.env.local
+
+# Logs e artefatos temporários do dbt / Airflow
+logs/
+dbt/healthdata_dw/target/
+dbt/healthdata_dw/dbt_packages/
+dbt/healthdata_dw/logs/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db

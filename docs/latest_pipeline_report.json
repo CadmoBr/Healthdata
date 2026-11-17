@@ -1,0 +1,179 @@
+{
+  "generated_at_utc": "2026-11-12T19:04:54.335120+00:00",
+  "pipeline_name": "healthdata_pipeline",
+  "gold_warehouse_row_counts": {
+    "dw_gold.dim_date": 228,
+    "dw_gold.dim_municipality": 172,
+    "dw_gold.dim_health_facility": 217,
+    "dw_gold.dim_procedure": 69,
+    "dw_gold.fact_hospital_beds": 63,
+    "dw_gold.fact_hospital_production": 99
+  },
+  "recent_audit_logs": [
+    {
+      "execution_id": "slv_sih_producao_hospitalar_bf17c818",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "sih_producao_hospitalar",
+      "execution_status": "SUCCESS",
+      "records_extracted": 99,
+      "records_processed": 99,
+      "records_rejected": 0,
+      "duration_seconds": 0.09
+    },
+    {
+      "execution_id": "slv_cnes_leitos_historico_d00b9fd6",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "cnes_leitos_historico",
+      "execution_status": "SUCCESS",
+      "records_extracted": 3,
+      "records_processed": 3,
+      "records_rejected": 0,
+      "duration_seconds": 0.06
+    },
+    {
+      "execution_id": "slv_hospitais_e_leitos_dbff41d1",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "hospitais_e_leitos",
+      "execution_status": "SUCCESS",
+      "records_extracted": 60,
+      "records_processed": 60,
+      "records_rejected": 0,
+      "duration_seconds": 0.16
+    },
+    {
+      "execution_id": "slv_cnes_estabelecimentos_8a9ba83f",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "cnes_estabelecimentos",
+      "execution_status": "SUCCESS",
+      "records_extracted": 60,
+      "records_processed": 60,
+      "records_rejected": 0,
+      "duration_seconds": 0.16
+    },
+    {
+      "execution_id": "slv_municipios_saude_00f44134",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "municipios_saude",
+      "execution_status": "SUCCESS",
+      "records_extracted": 60,
+      "records_processed": 60,
+      "records_rejected": 0,
+      "duration_seconds": 0.13
+    },
+    {
+      "execution_id": "brz_sih_hist_18e819d9",
+      "pipeline_name": "healthdata_bronze_sih_backfill",
+      "layer": "BRONZE",
+      "dataset_name": "sih_producao_hospitalar",
+      "execution_status": "SUCCESS",
+      "records_extracted": 96,
+      "records_processed": 96,
+      "records_rejected": 0,
+      "duration_seconds": 16.77
+    },
+    {
+      "execution_id": "slv_sih_producao_hospitalar_ad62eb42",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "sih_producao_hospitalar",
+      "execution_status": "SUCCESS",
+      "records_extracted": 3,
+      "records_processed": 3,
+      "records_rejected": 0,
+      "duration_seconds": 0.07
+    },
+    {
+      "execution_id": "slv_cnes_leitos_historico_f6e83e9f",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "cnes_leitos_historico",
+      "execution_status": "SUCCESS",
+      "records_extracted": 3,
+      "records_processed": 3,
+      "records_rejected": 0,
+      "duration_seconds": 0.07
+    },
+    {
+      "execution_id": "slv_hospitais_e_leitos_e104b80f",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "hospitais_e_leitos",
+      "execution_status": "SUCCESS",
+      "records_extracted": 60,
+      "records_processed": 60,
+      "records_rejected": 0,
+      "duration_seconds": 0.15
+    },
+    {
+      "execution_id": "slv_cnes_estabelecimentos_a12fbb2f",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "cnes_estabelecimentos",
+      "execution_status": "SUCCESS",
+      "records_extracted": 60,
+      "records_processed": 60,
+      "records_rejected": 0,
+      "duration_seconds": 0.16
+    },
+    {
+      "execution_id": "slv_municipios_saude_d1bd6ce9",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "municipios_saude",
+      "execution_status": "SUCCESS",
+      "records_extracted": 60,
+      "records_processed": 60,
+      "records_rejected": 0,
+      "duration_seconds": 0.14
+    },
+    {
+      "execution_id": "slv_municipios_saude_a8050aa4",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "municipios_saude",
+      "execution_status": "FAILED",
+      "records_extracted": 0,
+      "records_processed": 0,
+      "records_rejected": 0,
+      "duration_seconds": 0.24
+    },
+    {
+      "execution_id": "slv_sih_producao_hospitalar_66be3616",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "sih_producao_hospitalar",
+      "execution_status": "SUCCESS",
+      "records_extracted": 3,
+      "records_processed": 3,
+      "records_rejected": 0,
+      "duration_seconds": 0.18
+    },
+    {
+      "execution_id": "slv_cnes_leitos_historico_faff9633",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "cnes_leitos_historico",
+      "execution_status": "SUCCESS",
+      "records_extracted": 3,
+      "records_processed": 3,
+      "records_rejected": 0,
+      "duration_seconds": 0.14
+    },
+    {
+      "execution_id": "slv_hospitais_e_leitos_b9b1fc4b",
+      "pipeline_name": "healthdata_silver_processing",
+      "layer": "SILVER",
+      "dataset_name": "hospitais_e_leitos",
+      "execution_status": "SUCCESS",
+      "records_extracted": 60,
+      "records_processed": 60,
+      "records_rejected": 0,
+      "duration_seconds": 0.14
+    }
+  ]
+}

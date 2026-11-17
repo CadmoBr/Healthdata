@@ -1,0 +1,703 @@
+{
+  "/cnes/estabelecimentos": {
+    "http_status": 200,
+    "swagger_parameters": [
+      {
+        "name": "codigo_tipo_unidade",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Filtra estabelecimentos pelo código do tipo de unidade"
+      },
+      {
+        "name": "codigo_uf",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Filtra pelo código do estado"
+      },
+      {
+        "name": "codigo_municipio",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Filtra pelo código do município"
+      },
+      {
+        "name": "status",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Filtra estabelecimentos que possuem status ativo (código 1) ou inativo (código 0)."
+      },
+      {
+        "name": "estabelecimento_possui_centro_cirurgico",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Filtra estabelecimentos que possuem (código 1) ou não (código 0) centro cirúrgico."
+      },
+      {
+        "name": "estabelecimento_possui_centro_obstetrico",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Filtra estabelecimentos que possuem (código 1) ou não (código 0) centro obstétrico."
+      },
+      {
+        "name": "data_atualizacao",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Filtra estabelecimentos que foram atualizados a partir da data informada. Formato: YYYY-MM-DD"
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Quantidade de itens retornados por página. Deve ser menor ou igual 20."
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Número da página de itens que deve ser retornada (paginação iniciando a partir de 0 (zero)). Por exemplo: offset=0 retorna a primeira página."
+      }
+    ],
+    "json_data_key": "estabelecimentos",
+    "fields": [
+      "codigo_cnes",
+      "numero_cnpj_entidade",
+      "nome_razao_social",
+      "nome_fantasia",
+      "natureza_organizacao_entidade",
+      "tipo_gestao",
+      "descricao_nivel_hierarquia",
+      "descricao_esfera_administrativa",
+      "codigo_tipo_unidade",
+      "codigo_cep_estabelecimento",
+      "endereco_estabelecimento",
+      "numero_estabelecimento",
+      "bairro_estabelecimento",
+      "numero_telefone_estabelecimento",
+      "latitude_estabelecimento_decimo_grau",
+      "longitude_estabelecimento_decimo_grau",
+      "endereco_email_estabelecimento",
+      "numero_cnpj",
+      "codigo_identificador_turno_atendimento",
+      "descricao_turno_atendimento",
+      "estabelecimento_faz_atendimento_ambulatorial_sus",
+      "codigo_estabelecimento_saude",
+      "codigo_uf",
+      "codigo_municipio",
+      "descricao_natureza_juridica_estabelecimento",
+      "codigo_motivo_desabilitacao_estabelecimento",
+      "estabelecimento_possui_centro_cirurgico",
+      "estabelecimento_possui_centro_obstetrico",
+      "estabelecimento_possui_centro_neonatal",
+      "estabelecimento_possui_atendimento_hospitalar",
+      "estabelecimento_possui_servico_apoio",
+      "estabelecimento_possui_atendimento_ambulatorial",
+      "codigo_atividade_ensino_unidade",
+      "codigo_natureza_organizacao_unidade",
+      "codigo_nivel_hierarquia_unidade",
+      "codigo_esfera_administrativa_unidade",
+      "data_atualizacao"
+    ],
+    "sample_record": {
+      "codigo_cnes": 78,
+      "numero_cnpj_entidade": "11294402000162",
+      "nome_razao_social": "PREFEITURA MUNICIPAL DO CABO DE SANTO AGOSTINHO",
+      "nome_fantasia": "CENTRO HERBERT DE SOUZA",
+      "natureza_organizacao_entidade": null,
+      "tipo_gestao": "M",
+      "descricao_nivel_hierarquia": null,
+      "descricao_esfera_administrativa": "MUNICIPAL",
+      "codigo_tipo_unidade": 36,
+      "codigo_cep_estabelecimento": "54510360",
+      "endereco_estabelecimento": "AV HISTORIADOR PEREIRA DA COSTA",
+      "numero_estabelecimento": "428",
+      "bairro_estabelecimento": "CENTRO",
+      "numero_telefone_estabelecimento": "(81)35210974",
+      "latitude_estabelecimento_decimo_grau": -8.287483589453995,
+      "longitude_estabelecimento_decimo_grau": -35.037505222041695,
+      "endereco_email_estabelecimento": null,
+      "numero_cnpj": null,
+      "codigo_identificador_turno_atendimento": "03",
+      "descricao_turno_atendimento": "ATENDIMENTOS NOS TURNOS DA MANHA E A TARDE",
+      "estabelecimento_faz_atendimento_ambulatorial_sus": "SIM",
+      "codigo_estabelecimento_saude": "2602900000078",
+      "codigo_uf": 26,
+      "codigo_municipio": 260290,
+      "descricao_natureza_juridica_estabelecimento": "1244",
+      "codigo_motivo_desabilitacao_estabelecimento": null,
+      "estabelecimento_possui_centro_cirurgico": 0,
+      "estabelecimento_possui_centro_obstetrico": 0,
+      "estabelecimento_possui_centro_neonatal": 0,
+      "estabelecimento_possui_atendimento_hospitalar": 0,
+      "estabelecimento_possui_servico_apoio": 0,
+      "estabelecimento_possui_atendimento_ambulatorial": 0,
+      "codigo_atividade_ensino_unidade": "04",
+      "codigo_natureza_organizacao_unidade": null,
+      "codigo_nivel_hierarquia_unidade": null,
+      "codigo_esfera_administrativa_unidade": "M ",
+      "data_atualizacao": "2025-09-30"
+    }
+  },
+  "/assistencia-a-saude/cnes-estabelecimentos": {
+    "http_status": 200,
+    "swagger_parameters": [
+      {
+        "name": "nu_comp",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Competência (ano e mês) da informação"
+      },
+      {
+        "name": "co_ibge",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Código IBGE do município"
+      },
+      {
+        "name": "co_cnes",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Código CNES do estabelecimento de saúde"
+      },
+      {
+        "name": "no_grupo_nat_jur",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Nome do grupo da natureza jurídica"
+      },
+      {
+        "name": "tp_gestao",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Tipo de gestão do estabelecimento"
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Quantidade de itens retornados por página. Deve ser menor ou igual 1000."
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Número da página de itens que deve ser retornada (paginação iniciando a partir de 0 (zero)). Por exemplo: offset=0 retorna a primeira página."
+      }
+    ],
+    "json_data_key": "cnes_estabelecimentos",
+    "fields": [
+      "nu_comp",
+      "co_ibge",
+      "co_cnes",
+      "no_fantasia",
+      "no_empresarial",
+      "nu_cnpj",
+      "nu_cnpj_mantenedora",
+      "tp_gestao",
+      "tp_unidade",
+      "ds_class_estab",
+      "ds_natureza_juridica",
+      "no_grupo_nat_jur",
+      "no_logradouro",
+      "nu_endereco",
+      "ds_complemento",
+      "nu_cep",
+      "nu_telefone",
+      "ds_email",
+      "nu_latitude",
+      "nu_longitude",
+      "ds_status"
+    ],
+    "sample_record": {
+      "nu_comp": 200801,
+      "co_ibge": 312160,
+      "co_cnes": "3019330",
+      "no_fantasia": "POSTO DE SAUDE PINHEIRO",
+      "no_empresarial": "PREFEITURA MUNICIPAL DE DIAMANTINA",
+      "nu_cnpj": null,
+      "nu_cnpj_mantenedora": "17754136000190",
+      "tp_gestao": "MUNICIPAL",
+      "tp_unidade": "01 - POSTO DE SAUDE",
+      "ds_class_estab": "-",
+      "ds_natureza_juridica": "1000 - ADMINISTRACAO PUBLICA",
+      "no_grupo_nat_jur": "PUBLICO",
+      "no_logradouro": "RUA PRINCIPAL",
+      "nu_endereco": "S/Nº",
+      "ds_complemento": null,
+      "nu_cep": "39100000",
+      "nu_telefone": null,
+      "ds_email": null,
+      "nu_latitude": null,
+      "nu_longitude": null,
+      "ds_status": "ATIVO"
+    }
+  },
+  "/assistencia-a-saude/cnes-leitos": {
+    "http_status": 200,
+    "swagger_parameters": [
+      {
+        "name": "nu_comp",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Competência (ano e mês) da informação"
+      },
+      {
+        "name": "co_ibge",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Código IBGE do município"
+      },
+      {
+        "name": "co_cnes",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Código CNES do estabelecimento de saúde"
+      },
+      {
+        "name": "no_grupo_nat_jur",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Nome do grupo da natureza jurídica"
+      },
+      {
+        "name": "tp_leito",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Tipo do leito hospitalar"
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Quantidade de itens retornados por página. Deve ser menor ou igual 1000."
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Número da página de itens que deve ser retornada (paginação iniciando a partir de 0 (zero)). Por exemplo: offset=0 retorna a primeira página."
+      }
+    ],
+    "json_data_key": "cnes_leitos",
+    "fields": [
+      "nu_comp",
+      "co_ibge",
+      "co_cnes",
+      "tp_unidade",
+      "ds_class_estab",
+      "no_grupo_nat_jur",
+      "tp_leito",
+      "ds_leito",
+      "qt_existente",
+      "qt_sus"
+    ],
+    "sample_record": {
+      "nu_comp": 200801,
+      "co_ibge": 313240,
+      "co_cnes": "2127687",
+      "tp_unidade": "05 - HOSPITAL GERAL",
+      "ds_class_estab": "-",
+      "no_grupo_nat_jur": "SEM FINS LUCRATIVOS",
+      "tp_leito": "3  - COMPLEMENTAR",
+      "ds_leito": "61 -",
+      "qt_existente": 6,
+      "qt_sus": 0
+    }
+  },
+  "/assistencia-a-saude/hospitais-e-leitos": {
+    "http_status": 200,
+    "swagger_parameters": [
+      {
+        "name": "uf",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Filtra pela sigla do estado"
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Quantidade de itens retornados por página. Deve ser menor ou igual 1000."
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Número da página de itens que deve ser retornada (paginação iniciando a partir de 0 (zero)). Por exemplo: offset=0 retorna a primeira página."
+      }
+    ],
+    "json_data_key": "hospitais_leitos",
+    "fields": [
+      "nome_da_regiao_do_brasil_onde_fica_o_hospital",
+      "unidade_da_federacao_onde_fica_o_hospital",
+      "nome_do_municipio_onde_fica_o_hospital",
+      "motivo_da_desabilitacao_do_hospital,_caso_esteja_desabilitado",
+      "nome_do_hospital",
+      "nome_da_razao_social_do_hospital",
+      "tipo_da_gestao_do_hospital",
+      "codigo_do_tipo_da_unidade",
+      "descricao_do_tipo_da_unidade",
+      "natureza_juridica_do_hospital",
+      "descricao_da_natureza_juridica_do_hosptial",
+      "enderco_do_hospital",
+      "numero_do_endereco_do_hospital",
+      "complemento_do_endereco_do_hospital",
+      "nome_do_bairro_do_endereco_do_hosptial",
+      "numero_do_cep_do_hospital",
+      "quantidade_total_de_leitos_do_hosptial",
+      "quantidade_total_de_leitos_sus_do_hosptial",
+      "quantidade_de_leitos_de_uti_do_hosptial",
+      "quantidade_de_leitos_de_uti_sus_do_hosptial",
+      "quantidade_de_leitos_de_uti_adulto_do_hosptial",
+      "quantidade_de_leitos_de_uti_sus_adulto_do_hosptial",
+      "quantidade_de_leitos_de_uti_pediatrico_do_hosptial",
+      "quantidade_de_leitos_de_uti_sus_pediatrico_do_hosptial",
+      "quantidade_de_leitos_de_uti_neonatal_do_hosptial",
+      "quantidade_de_leitos_de_uti_sus_neonatal_do_hosptial",
+      "quantidade_de_leitos_de_uti_queimado_do_hosptial",
+      "quantidade_de_leitos_de_uti_sus_queimado_do_hosptial",
+      "quantidade_de_leitos_de_uti_coronariana_do_hosptial",
+      "quantidade_de_leitos_de_uti_sus_coronariana_do_hosptial",
+      "codigo_ibge_do_municipio"
+    ],
+    "sample_record": {
+      "nome_da_regiao_do_brasil_onde_fica_o_hospital": "NORDESTE",
+      "unidade_da_federacao_onde_fica_o_hospital": "PE",
+      "nome_do_municipio_onde_fica_o_hospital": "RECIFE",
+      "motivo_da_desabilitacao_do_hospital,_caso_esteja_desabilitado": null,
+      "nome_do_hospital": "HOSPITAL DAS CLINICAS",
+      "nome_da_razao_social_do_hospital": "UNIVERSIDADE FEDERAL DE PERNAMBUCO",
+      "tipo_da_gestao_do_hospital": "D",
+      "codigo_do_tipo_da_unidade": "05",
+      "descricao_do_tipo_da_unidade": "HOSPITAL GERAL",
+      "natureza_juridica_do_hospital": "1000",
+      "descricao_da_natureza_juridica_do_hosptial": "HOSPITAL_PÚBLICO",
+      "enderco_do_hospital": "AV PROFESSOR MORAES REGO",
+      "numero_do_endereco_do_hospital": "S/N",
+      "complemento_do_endereco_do_hospital": null,
+      "nome_do_bairro_do_endereco_do_hosptial": "CIDADE UNIVERSITARIA",
+      "numero_do_cep_do_hospital": "50670420",
+      "quantidade_total_de_leitos_do_hosptial": 354.0,
+      "quantidade_total_de_leitos_sus_do_hosptial": 354.0,
+      "quantidade_de_leitos_de_uti_do_hosptial": 0.0,
+      "quantidade_de_leitos_de_uti_sus_do_hosptial": 0.0,
+      "quantidade_de_leitos_de_uti_adulto_do_hosptial": 0.0,
+      "quantidade_de_leitos_de_uti_sus_adulto_do_hosptial": 0.0,
+      "quantidade_de_leitos_de_uti_pediatrico_do_hosptial": 0.0,
+      "quantidade_de_leitos_de_uti_sus_pediatrico_do_hosptial": 0.0,
+      "quantidade_de_leitos_de_uti_neonatal_do_hosptial": 0.0,
+      "quantidade_de_leitos_de_uti_sus_neonatal_do_hosptial": 0.0,
+      "quantidade_de_leitos_de_uti_queimado_do_hosptial": 0.0,
+      "quantidade_de_leitos_de_uti_sus_queimado_do_hosptial": 0.0,
+      "quantidade_de_leitos_de_uti_coronariana_do_hosptial": 0.0,
+      "quantidade_de_leitos_de_uti_sus_coronariana_do_hosptial": 0.0,
+      "codigo_ibge_do_municipio": null
+    }
+  },
+  "/assistencia-a-saude/sih-procedimentos-hospitalares": {
+    "http_status": 200,
+    "swagger_parameters": [
+      {
+        "name": "nu_ano",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Ano de referência da produção"
+      },
+      {
+        "name": "nu_comp",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Competência (ano e mês) da informação"
+      },
+      {
+        "name": "co_ibge",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Código IBGE do município"
+      },
+      {
+        "name": "co_cnes",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Código CNES do estabelecimento de saúde"
+      },
+      {
+        "name": "ds_grupo_nat_jur",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Nome do grupo da natureza jurídica"
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Quantidade de itens retornados por página. Deve ser menor ou igual 1000."
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Número da página de itens que deve ser retornada (paginação iniciando a partir de 0 (zero)). Por exemplo: offset=0 retorna a primeira página."
+      }
+    ],
+    "json_data_key": "sih_procedimentos_hospitalares",
+    "fields": [
+      "nu_ano",
+      "nu_comp",
+      "co_ibge",
+      "co_cnes",
+      "nu_cnpj",
+      "no_fantasia",
+      "ds_natureza_juridica",
+      "ds_grupo_nat_jur",
+      "co_ibge_pac",
+      "ds_financiamento",
+      "ds_procedimento",
+      "ds_complex_procedimento",
+      "qt_procedimento",
+      "nu_valor_procedimento",
+      "co_complexidade",
+      "co_financiamento",
+      "co_proc_realizado"
+    ],
+    "sample_record": {
+      "nu_ano": 2017,
+      "nu_comp": 201701,
+      "co_ibge": 500270,
+      "co_cnes": "0009776",
+      "nu_cnpj": "03221702000193",
+      "no_fantasia": "HOSPITAL DO CANCER DR ALFREDO ABRAO",
+      "ds_natureza_juridica": "3069 - FUNDACAO PRIVADA",
+      "ds_grupo_nat_jur": "SEM FINS LUCRATIVOS",
+      "co_ibge_pac": "500270",
+      "ds_financiamento": "06 - Média e Alta Complexidade (MAC)",
+      "ds_procedimento": "0304100021 - TRATAMENTO CLÍNICO DE PACIENTE ONCOLÓGICO",
+      "ds_complex_procedimento": "02 - Média Complexidade",
+      "qt_procedimento": 31,
+      "nu_valor_procedimento": 34040.7,
+      "co_complexidade": "02",
+      "co_financiamento": "06",
+      "co_proc_realizado": "0304100021"
+    }
+  },
+  "/assistencia-a-saude/sia-procedimentos-ambulatoriais": {
+    "http_status": 200,
+    "swagger_parameters": [
+      {
+        "name": "nu_ano",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Ano de referência da produção"
+      },
+      {
+        "name": "nu_comp",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Competência (ano e mês) da informação"
+      },
+      {
+        "name": "co_ibge",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Código IBGE do município"
+      },
+      {
+        "name": "co_cnes",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Código CNES do estabelecimento de saúde"
+      },
+      {
+        "name": "ds_grupo_nat_jur",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Nome do grupo da natureza jurídica"
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Quantidade de itens retornados por página. Deve ser menor ou igual 1000."
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Número da página de itens que deve ser retornada (paginação iniciando a partir de 0 (zero)). Por exemplo: offset=0 retorna a primeira página."
+      }
+    ],
+    "json_data_key": "sia_procedimentos_ambulatoriais",
+    "fields": [
+      "nu_ano",
+      "nu_comp",
+      "co_ibge",
+      "co_cnes",
+      "no_fantasia",
+      "nu_cnpj_executante",
+      "ds_natureza_juridica",
+      "ds_grupo_nat_jur",
+      "ds_procedimento",
+      "ds_complex_procedimento",
+      "qt_procedimento",
+      "nu_valor_procedimento",
+      "ds_tp_unidade",
+      "co_pa_proc_id",
+      "co_tp_unidade",
+      "co_natureza_jur",
+      "co_pa_complexidade"
+    ],
+    "sample_record": {
+      "nu_ano": 2017,
+      "nu_comp": 201701,
+      "co_ibge": 230270,
+      "co_cnes": "2563290",
+      "no_fantasia": "CENTRO DE SAUDE DE CAMPOS SALES",
+      "nu_cnpj_executante": "07416704000199",
+      "ds_natureza_juridica": "1244 - MUNICIPIO",
+      "ds_grupo_nat_jur": "PUBLICO",
+      "ds_procedimento": "0301010137 - CONSULTA/ATENDIMENTO DOMICILIAR",
+      "ds_complex_procedimento": "1 - Atenção Básica",
+      "qt_procedimento": 28,
+      "nu_valor_procedimento": 0.0,
+      "ds_tp_unidade": "01 - POSTO DE SAUDE",
+      "co_pa_proc_id": "0301010137",
+      "co_tp_unidade": "01",
+      "co_natureza_jur": "1244",
+      "co_pa_complexidade": 1
+    }
+  },
+  "/macrorregiao-e-regiao-de-saude/municipio": {
+    "http_status": 200,
+    "swagger_parameters": [
+      {
+        "name": "codigo_municipio",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Filtra pelo código do município"
+      },
+      {
+        "name": "municipio",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Filtra pelo nome do município"
+      },
+      {
+        "name": "sigla_uf",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Filtra pela sigla do estado"
+      },
+      {
+        "name": "codigo_regiao_saude",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Filtra pelo código de região saúde"
+      },
+      {
+        "name": "regiao_saude",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Filtra pelo nome de regiao saúde"
+      },
+      {
+        "name": "codigo_macrorregiao_de_saude",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Filtra pelo código de macrorregiao saúde"
+      },
+      {
+        "name": "macrorregiao_saude",
+        "in": "query",
+        "required": false,
+        "type": "string",
+        "description": "Filtra pelo nome de macrorregiao saúde"
+      },
+      {
+        "name": "limit",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Quantidade de itens retornados por página. Deve ser menor ou igual 860."
+      },
+      {
+        "name": "offset",
+        "in": "query",
+        "required": false,
+        "type": "integer",
+        "description": "Número da página de itens que deve ser retornada (paginação iniciando a partir de 0 (zero)). Por exemplo: offset=0 retorna a primeira página."
+      }
+    ],
+    "json_data_key": "macrorregiao_regiao_saude_municipios",
+    "fields": [
+      "codigo_regiao_pais",
+      "regiao_pais",
+      "codigo_uf",
+      "uf",
+      "codigo_macrorregiao_saude",
+      "macrorregiao_saude",
+      "codigo_regiao_saude",
+      "regiao_saude",
+      "codigo_municipio",
+      "municipio",
+      "populacao_estimada_ibge_2022"
+    ],
+    "sample_record": {
+      "codigo_regiao_pais": "1",
+      "regiao_pais": "Norte",
+      "codigo_uf": "11",
+      "uf": "Rondônia",
+      "codigo_macrorregiao_saude": "1101",
+      "macrorregiao_saude": "MACRORREGIONAL II (CACOAL)",
+      "codigo_regiao_saude": "11006",
+      "regiao_saude": "CONE SUL",
+      "codigo_municipio": "110006",
+      "municipio": "RO - COLORADO DO OESTE",
+      "populacao_estimada_ibge_2022": 15663
+    }
+  }
+}

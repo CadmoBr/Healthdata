@@ -1,0 +1,12 @@
+healthdata_dw:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      user: healthdata_user
+      password: healthdata_pass_local
+      port: 5433
+      dbname: healthdata_dw
+      schema: dw_gold
+      threads: 4

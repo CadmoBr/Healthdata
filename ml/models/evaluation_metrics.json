@@ -1,0 +1,116 @@
+{
+  "eda": {
+    "total_months": 24,
+    "start_competencia": 201701,
+    "end_competencia": 201812,
+    "missing_months_filled": 0,
+    "mean_volume": 23.71,
+    "std_volume": 23.92,
+    "min_volume": 6.0,
+    "max_volume": 91.0,
+    "trend_slope_per_month": 0.2848,
+    "quarterly_seasonality": {
+      "T1": 25.67,
+      "T2": 34.33,
+      "T3": 24.67,
+      "T4": 10.17
+    }
+  },
+  "summary": {
+    "evaluated_at_utc": "2026-11-12T19:08:12.611552+00:00",
+    "train_periods": 15,
+    "test_periods": 6,
+    "best_model": "RandomForestRegressor",
+    "best_cv_mae": 17.24,
+    "best_model_test_rmse": 24.36,
+    "baseline_rmse": 37.33,
+    "model_path": "ml\\models\\best_demand_forecast_model.pkl",
+    "selection_criterion": "CV_MAE"
+  },
+  "metrics": [
+    {
+      "model_name": "XGBRegressor",
+      "cv_mae_mean": 17.62,
+      "MAE": 19.33,
+      "RMSE": 24.01,
+      "MAPE_pct": 105.87
+    },
+    {
+      "model_name": "RandomForestRegressor",
+      "cv_mae_mean": 17.24,
+      "MAE": 19.97,
+      "RMSE": 24.36,
+      "MAPE_pct": 118.34
+    },
+    {
+      "model_name": "LinearRegression",
+      "cv_mae_mean": 82.93,
+      "MAE": 22.37,
+      "RMSE": 27.67,
+      "MAPE_pct": 92.1
+    },
+    {
+      "model_name": "Naive_Lag1_Baseline",
+      "cv_mae_mean": null,
+      "MAE": 32.67,
+      "RMSE": 37.33,
+      "MAPE_pct": 221.63
+    }
+  ],
+  "test_predictions": [
+    {
+      "competencia": 201807,
+      "ds_data": "2018-07-01",
+      "valor_real": 65.0,
+      "Naive_Lag1_Baseline": 18.0,
+      "LinearRegression": 30.81,
+      "RandomForestRegressor": 20.73,
+      "XGBRegressor": 20.420000076293945
+    },
+    {
+      "competencia": 201808,
+      "ds_data": "2018-08-01",
+      "valor_real": 8.0,
+      "Naive_Lag1_Baseline": 65.0,
+      "LinearRegression": 0.0,
+      "RandomForestRegressor": 24.84,
+      "XGBRegressor": 24.729999542236328
+    },
+    {
+      "competencia": 201809,
+      "ds_data": "2018-09-01",
+      "valor_real": 51.0,
+      "Naive_Lag1_Baseline": 8.0,
+      "LinearRegression": 0.0,
+      "RandomForestRegressor": 19.91,
+      "XGBRegressor": 19.899999618530273
+    },
+    {
+      "competencia": 201810,
+      "ds_data": "2018-10-01",
+      "valor_real": 25.0,
+      "Naive_Lag1_Baseline": 51.0,
+      "LinearRegression": 0.0,
+      "RandomForestRegressor": 22.96,
+      "XGBRegressor": 21.559999465942383
+    },
+    {
+      "competencia": 201811,
+      "ds_data": "2018-11-01",
+      "valor_real": 6.0,
+      "Naive_Lag1_Baseline": 25.0,
+      "LinearRegression": 0.0,
+      "RandomForestRegressor": 21.94,
+      "XGBRegressor": 18.190000534057617
+    },
+    {
+      "competencia": 201812,
+      "ds_data": "2018-12-01",
+      "valor_real": 10.0,
+      "Naive_Lag1_Baseline": 6.0,
+      "LinearRegression": 0.0,
+      "RandomForestRegressor": 19.67,
+      "XGBRegressor": 17.950000762939453
+    }
+  ]
+}
