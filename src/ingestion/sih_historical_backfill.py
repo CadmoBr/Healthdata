@@ -106,7 +106,7 @@ def run_sih_real_historical_backfill(ano_inicio: int = 2019, ano_fim: int = 2026
                 saved_files.append(out_file)
 
                 logger.info(
-                    f"  -> Competência {comp}: {len(comp_comp_records if 'comp_comp_records' in locals() else comp_records)} registros salvos em '{out_file}'."
+                    f"  -> Competência {comp}: {len(comp_records)} registros salvos em '{out_file}'."
                 )
 
                 # Log de auditoria da execução por competência
